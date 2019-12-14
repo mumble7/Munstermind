@@ -16,6 +16,25 @@ def checkguess():
 
     #Hey student: your code here!!!!
 
+    #if guess_list = enigma_list - white peg, else - black peg (That simple?)
+
+    def list_contains(guess, enigma):
+        check = False
+
+        for m in guess:
+            for n in enigma:
+
+                if m == n:
+                    check = True
+                    hint['whitePegs'] ++ 1
+
+                else:
+                    hint['blackPegs'] ++ 1
+
+
+        return check
+
+
     hint = {'whitePegs':1, 'blackPegs':2} #create the hint as a dict
     print("the hint:", hint) #print out the hint to the console
     return jsonify(hint) #return the dict as a json
